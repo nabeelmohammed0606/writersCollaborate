@@ -1,0 +1,170 @@
+/* ---------- Base / Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Page Background ---------- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Your gradient, unchanged */
+  background: #ec008c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fc67d4,
+    #ec008c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fc67d4,
+    #ec008c
+  ); /* Modern browsers */
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Top Navigation / Header ---------- */
+
+.index-header-section {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fdfdfd; /* white-ish bar like the example */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.75rem 5vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Container holding the two buttons */
+.index-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Base button style for both links */
+.index-a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+/* Login button: light with dark border (outline style) */
+#login {
+  background-color: #ffffff;
+  color: #111111;
+  border-color: #111111;
+}
+
+#login:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Sign-up button: solid black pill */
+#sign-up {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+}
+
+#sign-up:hover {
+  background-color: #222222;
+  border-color: #222222;
+  transform: translateY(-1px);
+}
+
+/* ---------- Hero Heading ---------- */
+
+.index-header {
+  margin: 18vh auto 1.25rem; /* push the heading down like a hero section */
+  padding: 0 8vw;
+  max-width: 960px;
+  text-align: center;
+  font-family: "Brush Script MT", cursive; /* your chosen font */
+  font-weight: bold;
+  font-size: clamp(3rem, 8vw, 5.5rem); /* responsive large text */
+  color: #000000;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Hero Paragraph ---------- */
+
+.index-p {
+  margin: 0 auto 18vh;
+  padding: 1.5rem 2rem;
+  max-width: 640px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #000000;
+
+  /* Slight translucent panel for readability on bright gradient */
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Responsive Tweaks ---------- */
+
+@media (max-width: 768px) {
+  .index-header-section {
+    padding-inline: 1.5rem;
+  }
+
+  .index-header {
+    margin-top: 14vh;
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+  }
+
+  .index-p {
+    margin-bottom: 12vh;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .index-buttons {
+    gap: 0.5rem;
+  }
+
+  .index-a {
+    padding-inline: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .index-header {
+    margin-top: 12vh;
+  }
+}
